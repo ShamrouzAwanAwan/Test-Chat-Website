@@ -1,0 +1,13 @@
+:root{
+    --accent-hue-1: 210;
+    --primary-color: hsl(var(--accent-hue-1), 100%, 50%);
+    --primary-hover: hsl(var(--accent-hue-1), 100%, 50%);
+    --accent-hue-2: 250;
+    --secondary-color: hsl(var(--accent-hue-2), 100%, 70%);
+    --secondary-hover: hsl(var(--accent-hue-2), 100%, 50%);
+    --main-bg-color: hsl(0, 0%, 100%);
+    --solid-color: hsl(0, 0%, 97%);
+    --solid-hover: hsl(0, 0%, 90%);
+    --transition03: all 0.3s;
+    --contact-message-bg: red;
+}

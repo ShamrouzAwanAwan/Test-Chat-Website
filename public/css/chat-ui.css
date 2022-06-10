@@ -1,0 +1,339 @@
+body{
+  background-image: url(../img/bg-test1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.avatar {
+  margin: 0 10px;
+  width: 35px;
+  height: 35px;
+}
+#line-status{
+  font-size: 10px;
+}
+aside{
+  min-width: 0;
+  width: 0px;
+  transition: 0.3s;
+  overflow: hidden;
+  border-right: none;
+  border-right: 0px solid;
+}
+aside.active{
+  border-right: 2px solid #ffffff50;
+  min-width: 300px;
+  z-index: 1001;
+}
+header,footer{
+  backdrop-filter: blur(7px);
+  color: whitesmoke;
+  z-index: 1000;
+  transition: 0.3s;
+  height: 70px;
+  box-shadow: 0px 0 50px 5px #00000090;
+  min-width: 300px;
+}
+form.search-chats{
+  justify-content: center;
+  margin: 5px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50px;
+  width: 100%;
+  background: #ffffff90;
+}
+form.search-chats input{
+  color: white;
+  padding: 10px;
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+}
+form.search-chats input:hover,
+form.search-chats input:valid,
+form.search-chats input:focus,
+form.search-chats button:hover{
+  background: #ffffff50;
+}
+aside .container{
+  backdrop-filter: blur(2px);
+}
+aside .container li{
+  min-width: 300px;
+  margin-top: 2px;
+  transition: 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(2px);
+}
+aside .container li span{
+  width: 10px;
+  height: 10px;
+  background: red;
+  z-index: 10;
+  left: 10px;
+  bottom: 5px;;
+}
+aside .container li h6{
+  max-height: 1.5em;
+  overflow: hidden;
+}
+.chat-area li .message-body .message::before,
+aside .container li:before,
+header::before,
+footer::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--primary-color);
+  z-index: -1;
+  opacity: 0.6;
+}
+aside .container li::before{
+  opacity: 0.4;
+  transition: 0.3s;
+}
+aside .container li.active::before,
+aside .container li:hover::before{
+  opacity: 0.8;
+}
+label.tab,
+button.tab {
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+label.tab:hover,
+button.tab:hover{
+  background-color: #00000050;
+  box-shadow: 0 0 5px #ffffff50;
+}
+button.tab.active{
+  background-color: var(--primary-color);
+  box-shadow: 0 0 5px #00000050;
+}
+label.tab,
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+*{
+  font-family: calibri;
+  box-sizing: border-box;
+}
+.chat-area{
+  padding: 75px 0;
+}
+.chat-area li .message-body{
+  max-width: 80%;
+  animation: animate 0.3s linear forwards;
+}
+.chat-area .your-message .message-body,
+.chat-area .your-message{
+  flex-direction: row-reverse;
+}
+.chat-area li .message-body .message{
+  color: whitesmoke;
+  box-shadow: 0 10px 50px 5px #00000090;
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.3s;
+  padding: 10px;
+}
+.chat-area li .message-body .message:hover{
+  backdrop-filter: blur(15px);
+}
+.chat-area li button.tab{
+  opacity: 0;
+}
+.chat-area li:hover button.tab,
+.chat-area li button.tab:focus{
+  opacity: 1;
+}
+/* 
+.chat-area li .message-body .message::before{
+  border-radius: 12px; 
+}
+*/
+.chat-area .message-text{
+  margin-bottom: 5px;
+  line-height: 1em;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+.chat-area li .message-body .message img{
+  width: 15px;
+}
+.chat-area li .message-body .message span{
+  font-size: 12px;
+}
+#contact-name{
+  overflow: hidden;
+  height: 1.2em;
+}
+.chat-container footer{
+  bottom: 0;
+  padding: 12.5px 10px;
+}
+.chat-container footer input{
+  padding: 7px 35px;
+  transition: 0.3s;
+}
+.chat-container footer.active input{
+  padding-left: 10px;
+}
+.chat-container footer button[type="submit"]{
+  right: 100px;
+  opacity: 0;
+}
+.chat-container button.tab::after{
+  bottom: unset;
+  top: -100%;
+  left: -100%;
+}
+.chat-container footer .controls{
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+  margin: 0;
+}
+.chat-container footer.active{
+  height: 110px;
+}
+.chat-container footer.active .controls{
+  height: 50px;
+  margin: 10px;
+}
+.chat-container footer #select-emoji-btn{
+  left: 40px;
+  background-size: 100%;
+}
+.chat-container footer.active #select-emoji-btn{
+  left: -40px;
+  opacity: 0;
+}
+#record-audio-btn,
+.chat-form:valid #send-message-btn{
+  right: 13px;
+  opacity: 1;
+}
+.chat-form:valid #record-audio-btn{
+  right: -30px;
+  opacity: 0;
+}
+.camera-pop{
+  height: 100%;
+  width: 0;
+  transition: 0.3s;
+  z-index: 1001;
+  background: #000;
+  overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.camera-pop.active{
+  width: 100%;
+}
+.camera-pop.active.video-call #camera-switch-btn,
+.camera-pop.active.video-call #camera-flash-btn,
+.camera-pop.active.video-call video{
+  display: block;
+}
+.camera-pop .controls{
+  bottom: 10%;
+}
+.camera-pop .controls button{
+  margin: 0 10px;
+}
+.camera-pop .controls #call-end-btn{
+  width: 40px;
+  background-color: var(--primary-color);
+  height: 40px;
+  margin: 0 20px;
+}
+.camera-pop .controls #call-end-btn:focus,
+.camera-pop .controls #call-end-btn:hover{
+  background-color: red;
+}
+.camera-pop #camera-switch-btn,
+.camera-pop #camera-flash-btn{
+  top: 50px;
+  right: 50px;
+}
+.camera-pop #camera-switch-btn{
+  left: 50px;
+}
+.select-file-pop{
+  background: #000000ca;
+  z-index: 10001;
+  transition: 0.3s;
+  width: 0;
+  overflow: hidden;
+}
+.select-file-pop.active{
+  width: 100%;
+}
+.select-file-pop div{
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px #00000090;
+}
+#img-popper{
+  width: 500px;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+span#call-timer{
+  font-size: 1.5rem;
+  color: whitesmoke;
+  letter-spacing: 1px;
+}
+@media (max-width: 768px){
+  aside{
+    position: absolute;
+    top: -100%;
+    top: 0;
+    z-index: 1001;
+  }
+  aside.active{
+    position: absolute;
+    background: #000000c0;
+    width: 100%;
+  }
+  aside .container{
+    width: 100%;
+  }
+  aside .container li{
+    width: 100%;
+  }
+  aside #close-index-btn{
+    display: block;
+  }
+  header,footer{
+    min-width: unset;
+  }
+}
+@media (max-width: 425px){
+  .chat-area .avatar{
+    display: none;
+  }
+  .chat-container header .margin-left10{
+    margin-left: 5px;
+  }
+}

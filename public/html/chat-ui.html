@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/chat-ui.css">
+    <link rel="stylesheet" href="../css/button-res.css">
+    <script src="../js/anime.min.js"></script>
+    <title id="title"></title>
+</head>
+
+<body>
+    <div class="app flex justify-center align-center width-fill height-fill">
+        <aside class="flex flex-column align-center height-fit">
+            <header class="flex flex-column justify-center align-center flex padding-x10 width-fit">
+                <div class="flex align-center top width-fit align-center">
+                    <button id="close-index-btn"
+                        class="display-none radius-round tab border-none outline-none bg-none margin-right10"></button>
+                    <form class="flex-box search-chats" action="/search" method="get">
+                        <input type="search" value="" required="" placeholder="Search Here" name="q" autocomplete="on">
+                    </form>
+                </div>
+            </header>
+            <div class="container flex flex-column align-center width-fit height-fit list-none">
+                <li class="flex justify-center align-center position-relative padding-10" draggable="true">
+                    <div class="position-relative">
+                        <img src="../img/avatar-you.png" class="avatar radius-round">
+                        <span class="position-absolute radius-round"></span>
+                    </div>
+                    <div class="flex flex-column width-fit">
+                        <ul class="flex justify-between width-fit align-center">
+                            <h5>Shamrouz Awan</h5>
+                            <h6>12:24</h6>
+                        </ul>
+                        <h6>My last message goes here.</h6>
+                    </div>
+                </li>
+                <li class="flex justify-center align-center position-relative padding-10" draggable="true">
+                    <div class="position-relative">
+                        <img src="../img/avatar-you.png" class="avatar radius-round">
+                        <span class="position-absolute radius-round"></span>
+                    </div>
+                    <div class="flex flex-column width-fit">
+                        <ul class="flex justify-between width-fit align-center">
+                            <h5>Shamrouz Awan</h5>
+                            <h6>12:24</h6>
+                        </ul>
+                        <h6>My last message goes here.</h6>
+                    </div>
+                </li>
+                <li class="flex justify-center align-center position-relative padding-10 active" draggable="true">
+                    <div class="position-relative">
+                        <img src="../img/avatar-you.png" class="avatar radius-round">
+                        <span class="position-absolute radius-round"></span>
+                    </div>
+                    <div class="flex flex-column width-fit">
+                        <ul class="flex justify-between width-fit align-center">
+                            <h5>Shamrouz Awan</h5>
+                            <h6>12:24</h6>
+                        </ul>
+                        <h6>My last message goes here.</h6>
+                    </div>
+                </li>
+            </div>
+            <footer class="flex justify-between align-center width-fit padding-10">
+                <button id="add-chat-btn"
+                    class="radius-round tab border-none outline-none bg-none margin-left10"></button>
+                <ul class="flex">
+                    <button id="chat-settings-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-left10"></button>
+                    <button id="app-settings-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-left10"></button>
+                </ul>
+            </footer>
+        </aside>
+        <div class="chat-container width-fit height-fit flex flex-column align-center justify-between position-relative">
+            <header class="flex justify-between align-center padding-y10 width-fit position-absolute">
+                <div class="left flex justify-center align-center padding-10">
+                    <button id="chat-index-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                </div>
+                <div class="center flex align-center width-90">
+                    <img class="avatar radius-round margin-x10" src="../img/avatar-you.png">
+                    <ul class="center flex flex-column justify-center">
+                        <h5 id="contact-name">Shamrouz Awan</h5>
+                        <span id="line-status">Offline</span>
+                    </ul>
+                </div>
+                <div class="right flex justify-center align-center padding-10">
+                    <button id="a-call-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                    <button id="v-call-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                    <button id="delete-all-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                </div>
+            </header>
+            <div class="chat-area overflow-y-auto width-fit height-fit overflow-x-hidden list-none"></div>
+            <footer
+                class="flex flex-column justify-center width-fit align-center position-absolute padding-10 overflow-x-hidden">
+                <form class="chat-form flex justify-between width-fit align-center">
+                    <button id="select-emoji-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-left10 position-absolute"></button>
+                    <button id="input-sub-footer-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-right10 position-relative"></button>
+                    <input type="text" placeholder="Message..." id="message-input"
+                        class="width-fit radius-50px outline-none border-none" required>
+                    <button type="submit" id="send-message-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-left10 position-absolute active"></button>
+                    <button id="record-audio-btn"
+                        class="radius-round tab border-none outline-none bg-none margin-left10 position-absolute active"></button>
+                </form>
+                <div class="controls flex justify-between width-fit align-center margin-top10">
+                    <ul>
+                        Sharing
+                    </ul>
+                    <ul class="flex width-fit justify-end">
+                        <button id="camera-select-btn"
+                            class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                        <label for="send-photo-select-btn" id="select-photo" class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></label>
+                        <input id="send-photo-select-btn" type="file" accept="image/png, image/jpeg" class="display-none">
+                        <button id="send-video-select-btn"
+                            class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                        <button id="send-music-select-btn"
+                            class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                        <button id="send-doc-btn"
+                            class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                        <button id="send-location-btn"
+                            class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        <div class="camera-pop position-absolute">
+            <div class="flex flex-column width-fit height-fit position-relative">
+                <video autoplay id="video" class="width-fit height-fit position-absolute display-none"></video>
+                <div class="flex justify-center flex-column width-fit">
+                    <ul class="controls flex flex-column position-absolute justify-center align-center width-fit">
+                        <ul><span id="call-timer">01 45</span></ul>
+                        <ul class="flex width-fit justify-center margin-top10">
+                            <button id="call-mic-btn"
+                                class="radius-round tab border-none outline-none padding-10 bg-none active"></button>
+                            <button id="call-end-btn"
+                                class="radius-round tab border-none outline-none padding-10 bg-none"></button>
+                            <button id="switch-video-btn"
+                                class="radius-round tab border-none outline-none padding-10 bg-none"></button>
+                        </ul>
+                    </ul>
+                </div>
+                <button id="camera-flash-btn"
+                    class="position-absolute radius-round tab display-none border-none outline-none padding-10 bg-none"></button>
+                <button id="camera-switch-btn"
+                    class="position-absolute radius-round tab display-none border-none outline-none padding-10 bg-none"></button>
+            </div>
+        </div>
+        <div class="select-file-pop position-absolute active height-fit flex flex-column justify-center align-center">
+            <div class="flex flex-column padding-10">
+                <img id="img-popper" class="position-relative">
+            <ul class="flex justify-between margin-top10">
+                <button id="cencel-img-send" class="radius-round tab border-none outline-none bg-none margin-left10 position-relative"></button>
+                <button id="send-img-submit" class="radius-round tab border-none outline-none bg-none margin-right10 position-relative"></button>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="display-none">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="gooey-effect">
+                    <feGaussianBlur in="SourchGraphic" stdDeviation="2" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -9"
+                        result="gooey-effect" />
+                    <feComposite in="SourchGraphic" in2="gooey-effect" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+    <audio id="swip">
+        <source src="../audio/message-swip.ogg" type="audio/ogg"></audio>
+    <script src="../js/qs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
+<!--    
+    <script>
+        anime({
+      targets: '.line-drawing-demo .lines path',
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      duration: 3000,
+      delay: function(el, i) { return i * 250 },
+      direction: 'alternate',
+      loop: 'true'
+    });
+    </script>
+-->

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Wellcome</title>
+</head>
+
+<body>
+    <section id="home" class="main">
+        <ul class="logo">
+            <h2>Textify</h2>
+        </ul>
+        <ul cLass="form-signin">
+            <form action="./html/chat-ui.html" method="get" class="signin">
+                <input type="email" autocomplete="" placeholder="Email" required>
+                <input type="password" autocomplete="" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+            <p>Not have an account <a href="#register">Register</a></p>
+        </ul>
+    </section>
+    <section id="register">
+        <div class="chat-demo">
+        </div>
+        <div class="content">
+            <div class="container">
+                <form action="./html/chat-ui.html" method="get" class="register">
+                    <ul>
+                        <input style="animation-delay: 0.05s;" type="text" placeholder="First Name" id="" required>
+                        <input style="animation-delay: 0.10s;" type="text" placeholder="Last Name" id="" required>
+                    </ul>
+                    <select style="animation-delay: 0.15s;" name="" required id="">
+                        <option value="" selected disabled>Gender</option>
+                        <option value="">Male</option>
+                        <option value="">Female</option>
+                        <option value="">Custom</option>
+                    </select>
+                    <input style="animation-delay: 0.20s;" type="date" name="" id="">
+                    <input style="animation-delay: 0.25s;" type="email" placeholder="Email or Phone" id="" required>
+                    <input style="animation-delay: 0.30s;" type="password" placeholder="New Password" id="" required>
+                    <p>By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a> and <a
+                            href="#">Coockie Policy. </a>You may recieve SMS notifications from us and can opt out any
+                        time.</p>
+                    <input style="animation-delay: 0.35s;" type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <main class="join-main">
+            <form action="./html/chat-ui.html">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username..." required="">
+                </div>
+                <div class="form-control">
+                    <label for="room">Room</label>
+                    <select name="room" id="room">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="PHP">PHP</option>
+                        <option value="C#">C#</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Java">Java</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Join Chat</button>
+            </form>
+        </main>
+    </section>
+</body>
+
+</html>
